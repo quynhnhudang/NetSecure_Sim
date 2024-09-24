@@ -1,0 +1,13 @@
+version: '3'
+services:
+  attacker:
+    image: attacker_image
+    networks:
+      - sim_network
+  target:
+    image: vulnerable_web_app
+    networks:
+      - sim_network
+networks:
+  sim_network:
+    driver: bridge
